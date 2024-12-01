@@ -1,0 +1,25 @@
+<style>
+    .example
+    {
+        color: red;
+    }
+    #unique
+    {
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <div class="example">FirstDivElement</div>
+    <div id="unique">SecondDivElement</div>
+    <script>
+        var firstElement=document.querySelector(".example");
+        firstElement.style.color="blue";
+        console.log("FirstElement::",firstElement.textContent)
+    </script>
+     <script>
+        var firstElement1=document.querySelector("#unique");
+        firstElement1.style.color="red";
+        console.log("FirstElement1::",firstElement1.textContent)
+    </script>
+</body>

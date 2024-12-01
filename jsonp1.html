@@ -1,0 +1,6 @@
+<p id="demo"></p>
+<script>
+    const txt='{"name":"azar","age":45,"city":"karur"}'
+    const obj = JSON.parse(txt);
+    document.getElementById("demo").innerHTML = obj.name + " is " + obj.age + " years old and lives in " + obj.city;
+</script>

@@ -1,0 +1,23 @@
+<body>
+    <input id="numb">
+    <button type="button" onclick="myfun1()">ClickMe!!</button>
+    <p id="d1"></p>
+    <script>
+        function myfun1()
+        {
+            let x=document.getElementById("numb");
+            let text="";
+            if(x.value==""){
+                text="Please enter a number";
+                }
+                else{
+                    text="You entered: "+x.value;
+                }
+
+                document.getElementById("d1").innerHTML=text;
+        }
+        
+         
+
+    </script>
+</body>

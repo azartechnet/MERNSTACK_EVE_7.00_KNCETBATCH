@@ -1,0 +1,11 @@
+<form id="myform">
+    <input type="text" id="name" name="name" value="azar"/>
+    <input type="submit" value="Login"/>
+</form>
+<script>
+    var usernameElements=document.getElementsByName('name');
+    for(var i=0;i<usernameElements.length;i++)
+{
+    console.log(usernameElements[i].value);
+}
+</script>
