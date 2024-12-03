@@ -100,7 +100,7 @@ r1.render(<MyElem/>)*/
 
 //Conditional Rendering
 //Nested if else and else if ladder and switch statment
-const x=10
+/*const x=10
 let text="";
 if(x>10)
 {
@@ -119,4 +119,49 @@ const MyElem=()=>{
     )
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<MyElem/>)  //This will render the text based on the condition
+    r1.render(<MyElem/>)  //This will render the text based on the condition*/
+
+    //Importing css and bootstrap
+
+    /*import './index.css';
+
+    const App=()=>{
+      return(
+        <div>
+<h1>This is Heading</h1>
+<button type="button" class="btn btn-primary">Click me</button>
+        </div>
+        
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<App/>)*/
+
+    //function Component
+
+    // function Sample()
+    // {
+    //   return(
+    //     <div>
+    //       <h1>This is a function component</h1>
+    //     </div>
+    //   )
+    // }
+    // const r1=ReactDOM.createRoot(document.getElementById('root'))
+    // r1.render(<Sample/>)
+
+    //class component
+
+    class Sample extends React.Component
+    {
+       render()
+       {
+        return(
+          <div>
+            <h1>This is a class component</h1>
+          </div>
+        )
+       }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Sample/>)
