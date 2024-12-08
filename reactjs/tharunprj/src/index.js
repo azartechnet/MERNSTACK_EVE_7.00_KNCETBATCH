@@ -205,7 +205,7 @@ const MyElem=()=>{
 
     //Constructor using super
 
-    class Sample extends React.Component
+    /*class Sample extends React.Component
     {
       constructor()
       {
@@ -227,4 +227,72 @@ const MyElem=()=>{
       }
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Sample/>)
+    r1.render(<Sample/>)*/
+
+    //changing the state object
+
+    /*class Sample extends React.Component
+    {
+      constructor(props)
+      {
+        super(props);
+        this.state={
+          name:"Rahul",
+          age:25
+          }
+        this.handleClick=this.handleClick.bind(this);
+      }
+      handleClick()
+      {
+        this.setState({
+          name:"Rahul Kumar",
+          age:26
+          })
+        }
+          render()
+          {
+             return(
+              <div>
+                <h1>This is Heading tag</h1>
+                <h2>This is {this.state.name}</h2>
+                <h2>This is {this.state.age}</h2>
+                <button onClick={this.handleClick}>Click</button>
+              </div>
+             )
+          }
+      }
+    
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Sample/>)*/
+
+    //React Event
+
+    /*function Football()
+    {
+      const shoot=()=>{
+        alert("Goal Scored")
+      }
+      return(
+        <div>
+          <button onClick={shoot}>Shoot</button>
+        </div>
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Football/>)*/
+
+    //React Event argument passing
+
+    function Football()
+    {
+       const shoot=(name)=>{
+        alert(`${name} has scored a goal`)
+        }
+        return(
+          <div>
+            <button onClick={()=>shoot("Ronaldo")}>Shoot</button>
+          </div>
+        )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Football/>)
