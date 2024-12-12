@@ -283,7 +283,7 @@ const MyElem=()=>{
 
     //React Event argument passing
 
-    function Football()
+    /*function Football()
     {
        const shoot=(name)=>{
         alert(`${name} has scored a goal`)
@@ -295,4 +295,29 @@ const MyElem=()=>{
         )
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Football/>)
+    r1.render(<Football/>)*/
+
+    //Conditional Rendering
+
+    function MissedGoal()
+    {
+      return<h1>This is MissedGoal</h1>
+    }
+    function MadeGoal()
+    {
+      return<h1>Goal</h1>
+    }
+    function Goal(props)
+    {
+       const isGoal=props.isGoal;
+       if(isGoal)
+       {
+        return<MadeGoal/>
+       }
+       else
+       {
+        return<MissedGoal/>
+       }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Goal isGoal={Math.random()>0.5}/>)
