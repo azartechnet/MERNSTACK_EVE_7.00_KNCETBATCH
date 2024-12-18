@@ -299,7 +299,7 @@ const MyElem=()=>{
 
     //Conditional Rendering
 
-    function MissedGoal()
+    /*function MissedGoal()
     {
       return<h1>This is MissedGoal</h1>
     }
@@ -320,4 +320,40 @@ const MyElem=()=>{
        }
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Goal isGoal={Math.random()>0.5}/>)
+    r1.render(<Goal isGoal={Math.random()>0.5}/>)*/
+
+    //React List using Map
+
+    /*function Car(props)
+    {
+      return<h1>{props.name}</h1>
+    }
+    function Cars()
+    {
+        const cars=["BMW","Audi","Mercedes"]
+        return(
+          <div>
+            {cars.map((car)=><Car name={car}/>)}
+          </div>
+        )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Cars/>)*/
+
+    //React keys
+
+    function Car(props)
+    {
+      return<li>{props.id}{props.name}</li>
+    }
+    function Garage()
+    {
+      const cars=[{id:1,name:"tata"},{id:2,name:"Audi"},{id:3,name:"BMW"}]
+      return(
+        <div>
+          {cars.map((car)=><Car id={car.id} name={car.name}/>)}
+        </div>
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Garage/>)
