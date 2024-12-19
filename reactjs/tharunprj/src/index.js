@@ -342,7 +342,7 @@ const MyElem=()=>{
 
     //React keys
 
-    function Car(props)
+    /*function Car(props)
     {
       return<li>{props.id}{props.name}</li>
     }
@@ -356,4 +356,26 @@ const MyElem=()=>{
       )
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Garage/>)
+    r1.render(<Garage/>)*/
+
+    //React getDerivedStateFromProps
+
+    class Header extends React.Component
+    {
+      constructor(props)
+      {
+        super(props)
+        this.state={count:0}
+      }
+      static getDerivedStateFromProps(props,state)
+      {
+        console.log("getDerivedStateFromProps")
+        return{count:props.c1}
+      }
+      render()
+      {
+        return<h1>Count:{this.state.count}</h1>
+      }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Header c1={10}/>)
