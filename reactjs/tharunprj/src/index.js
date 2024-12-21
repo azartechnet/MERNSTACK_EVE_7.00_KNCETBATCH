@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 
 //Basic Rendering
 
@@ -360,7 +360,7 @@ const MyElem=()=>{
 
     //React getDerivedStateFromProps
 
-    class Header extends React.Component
+    /*class Header extends React.Component
     {
       constructor(props)
       {
@@ -378,4 +378,6 @@ const MyElem=()=>{
       }
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Header c1={10}/>)
+    r1.render(<Header c1={10}/>)*/
+
+    
