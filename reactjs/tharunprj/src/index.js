@@ -380,4 +380,53 @@ const MyElem=()=>{
     const r1=ReactDOM.createRoot(document.getElementById('root'))
     r1.render(<Header c1={10}/>)*/
 
+    //ComponentDidMount
+
+    /*class Header extends React.Component
+    {
+      constructor(props)
+      {
+        super(props)
+        this.state={favcolor:"red"}
+      }
+      componentDidMount()
+      {
+        console.log("componentDidMount")
+        setTimeout(()=>{
+          this.setState({favcolor:"blue"})
+        },3000)
+      }
+      render()
+      {
+        return<h1>My fav color is {this.state.favcolor}</h1>
+      }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Header/>)*/
+
+    //Updating getDerivedStateFromProps
+
+    class Header extends React.Component
+    {
+      constructor(props)
+      {
+        super(props)
+        this.state={favcolor:"red"}
+      }
+      static getDerivedStateFromProps(props,state)
+      {
+        console.log("getDerivedStateFromProps")
+      }
+      changeColor=()=>{
+        this.setState({favcolor:"blue"})
+      }
+      render()
+      {
+        return<h1>My fav color is {this.state.favcolor}
+        <button onClick={this.changeColor}>Change Color</button></h1>
+      }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Header/>)
+
     
