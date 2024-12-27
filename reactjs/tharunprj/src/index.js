@@ -406,7 +406,7 @@ const MyElem=()=>{
 
     //Updating getDerivedStateFromProps
 
-    class Header extends React.Component
+    /*class Header extends React.Component
     {
       constructor(props)
       {
@@ -427,6 +427,121 @@ const MyElem=()=>{
       }
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<Header/>)
+    r1.render(<Header/>)*/
+
+    //React Hooks
+
+    import {useState,useEffect} from 'react'
+
+    /*function Counter()
+    {
+       const[count,setCount]=useState(0);
+       const[name,setName]=useState("mohamed");
+       return(
+        <div>
+          <h1>Count is {count}</h1>
+          <button onClick={()=>setCount(count+1)}>Increment</button>
+          <h1>My name is {name}</h1>
+          <button onClick={()=>setName("azar")}>Change Name</button>
+        </div>
+       )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Counter/>)*/
+
+    //React useEffect
+
+    /*function ClickCounter()
+    {
+      const[count,setCount]=useState(0);
+      useEffect(()=>{
+        console.log("useEffect")
+        },[count])
+        return(
+          <div>
+            <h1>Count is {count}</h1>
+            <button onClick={()=>setCount(count+1)}>Increment</button>
+
+          </div>
+        )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<ClickCounter/>)*/
+
+    //useRef
+
+    /*import { useRef } from "react";
+
+    function FocusInput()
+    {
+       const inputRef=useRef(null);
+       const handleClick=()=>{
+        inputRef.current.focus();
+        }
+        return(
+          <div>
+            <input type="text" ref={inputRef}/>
+            <button onClick={handleClick}>Focus</button>
+          </div>
+        )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<FocusInput/>)*/
+
+    //React using without useContext
+
+    /*function Component1()
+    {
+      const [user,setUser]=useState("mohamed")
+      return(
+        <div>
+          <h1>Component 1</h1>
+          <p>User is {user}</p>
+          <button onClick={()=>setUser("Ahmed")}>Change User</button>
+          <Component2 user={user}/>
+        </div>
+      )
+    }
+    function Component2(props)
+    {
+       return(
+        <div>
+          <h1>Component 2</h1>
+          <p>User is {props.user}</p>
+        </div>
+       )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Component1/>)*/
+
+    //React using useContext
+    import { createContext, useContext} from "react";
+    const UserContext = createContext();
+    function Component1()
+    {
+      const [user, setUser] = useState("mohamed");
+      return (
+        <div>
+          <h1>Component 1</h1>
+          <p>User is {user}</p>
+          <button onClick={() => setUser("Ahmed")}>Change User</button>
+          <Component2 />
+        </div>
+      )
+    }
+
+    function Component2()
+  {
+      const user = useContext(UserContext);
+      return (
+        <div>
+          <h1>Component 2</h1>
+          <p>User is {user}</p>
+
+        </div>
+      )
+  }
+  const r1 = ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<UserContext.Provider value={"mohamed"}><Component1/></UserContext.Provider>)
 
     
